@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 600" width="1920" height="600">
+  <defs>
+    <linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0e27"/>
+      <stop offset="50%" style="stop-color:#1a1040"/>
+      <stop offset="100%" style="stop-color:#0a0e27"/>
+    </linearGradient>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00d4ff"/>
+      <stop offset="100%" style="stop-color:#7b2ff7"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="600" fill="url(#bg1)"/>
+  <!-- 装饰圈 -->
+  <circle cx="1600" cy="100" r="300" fill="#00d4ff" opacity="0.05"/>
+  <circle cx="300" cy="500" r="250" fill="#7b2ff7" opacity="0.05"/>
+  <circle cx="960" cy="300" r="200" fill="#ff6b6b" opacity="0.03"/>
+  <!-- 网格线 -->
+  <g stroke="rgba(255,255,255,0.03)" stroke-width="1">
+    <line x1="0" y1="150" x2="1920" y2="150"/><line x1="0" y1="300" x2="1920" y2="300"/>
+    <line x1="0" y1="450" x2="1920" y2="450"/>
+    <line x1="480" y1="0" x2="480" y2="600"/><line x1="960" y1="0" x2="960" y2="600"/>
+    <line x1="1440" y1="0" x2="1440" y2="600"/>
+  </g>
+  <!-- 抽象山 -->
+  <path d="M0 600 L200 350 L400 450 L600 250 L800 380 L1000 150 L1200 300 L1400 200 L1600 350 L1800 180 L1920 300 L1920 600 Z" fill="url(#g1)" opacity="0.08"/>
+  <path d="M0 600 L300 400 L500 500 L700 350 L900 450 L1100 280 L1300 400 L1500 320 L1700 450 L1920 380 L1920 600 Z" fill="#7b2ff7" opacity="0.05"/>
+  <!-- 星星 -->
+  <g fill="#fff">
+    <circle cx="200" cy="80" r="2" opacity="0.8"/><circle cx="450" cy="120" r="1.5" opacity="0.6"/>
+    <circle cx="700" cy="60" r="2.5" opacity="0.9"/><circle cx="1000" cy="100" r="1.5" opacity="0.5"/>
+    <circle cx="1300" cy="70" r="2" opacity="0.7"/><circle cx="1600" cy="130" r="1.5" opacity="0.6"/>
+    <circle cx="1800" cy="50" r="2" opacity="0.8"/><circle cx="300" cy="200" r="1" opacity="0.4"/>
+    <circle cx="800" cy="180" r="1.5" opacity="0.5"/><circle cx="1500" cy="200" r="1" opacity="0.4"/>
+  </g>
+  <!-- 文字 -->
+  <text x="200" y="240" font-family="'Microsoft YaHei',sans-serif" font-size="60" font-weight="bold" fill="#fff">探索未知，成就梦想</text>
+  <text x="200" y="310" font-family="'Microsoft YaHei',sans-serif" font-size="22" fill="#b0b8d1">用代码构建未来，以创新引领成长</text>
+  <!-- 装饰按钮 -->
+  <rect x="200" y="350" width="160" height="48" rx="24" fill="url(#g1)" opacity="0.9"/>
+  <text x="280" y="380" font-family="'Microsoft YaHei',sans-serif" font-size="16" fill="#fff" text-anchor="middle" font-weight="bold">开始探索 →</text>
+</svg>

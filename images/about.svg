@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="abg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0e27"/>
+      <stop offset="100%" style="stop-color:#1a1040"/>
+    </linearGradient>
+    <linearGradient id="ag" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00d4ff"/>
+      <stop offset="100%" style="stop-color:#7b2ff7"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#abg)"/>
+  <circle cx="400" cy="300" r="220" fill="url(#ag)" opacity="0.08"/>
+  <circle cx="400" cy="300" r="160" fill="url(#ag)" opacity="0.05"/>
+  <circle cx="400" cy="300" r="100" fill="url(#ag)" opacity="0.03"/>
+  <!-- 人形剪影 -->
+  <g fill="#fff" opacity="0.08">
+    <circle cx="400" cy="240" r="45"/>
+    <ellipse cx="400" cy="350" rx="65" ry="80"/>
+  </g>
+  <text x="400" y="460" font-family="'Microsoft YaHei',sans-serif" font-size="36" fill="#fff" text-anchor="middle" font-weight="bold">关于我</text>
+  <text x="400" y="500" font-family="'Microsoft YaHei',sans-serif" font-size="16" fill="#b0b8d1" text-anchor="middle">个人成长 · 学习历程 · 未来展望</text>
+</svg>

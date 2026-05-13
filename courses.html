@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="成果展示 - 张迎奥同学荣誉证书展示">
+    <title>成果展示 - 张迎奥同学个人成长展示与技术实践分享</title>
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="loader">
+        <div class="loader-spinner"></div>
+        <div class="loader-text">加载中...</div>
+        <div class="loader-progress"><div class="loader-progress-bar"></div></div>
+    </div>
+    
+    <canvas id="particles-canvas"></canvas>
+    
+    <nav class="navbar scrolled">
+        <div class="logo">
+            <a href="index.html"><img src="images/logo.svg" alt="个人成长之路 logo"></a>
+            <span class="logo-text">成长之路</span>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html"><i class="fas fa-home"></i> 主页</a></li>
+            <li><a href="courses.html" class="active"><i class="fas fa-trophy"></i> 成果展示</a></li>
+            <li><a href="gallery.html"><i class="fas fa-code"></i> 技术实践</a></li>
+            <li><a href="game.html"><i class="fas fa-gamepad"></i> 猜数字</a></li>
+            <li><a href="about.html"><i class="fas fa-user"></i> 关于我</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> 联系我</a></li>
+            <li><span class="header-time"></span></li>
+        </ul>
+        <div class="nav-toggle"><span></span><span></span><span></span></div>
+    </nav>
+    
+    <section class="page-banner">
+        <div class="banner-shapes"><span></span><span></span><span></span></div>
+        <h1>成果展示</h1>
+        <p>张迎奥同学的荣誉证书与成果展示</p>
+    </section>
+    
+    <!-- 证书展示 -->
+    <section class="section">
+        <div class="section-header reveal">
+            <span class="subtitle"><i class="fas fa-trophy"></i> 证书展示</span>
+            <h2>我的 <span class="highlight">荣誉成果</span></h2>
+            <p>共计47项荣誉证书，涵盖国家级、省级、院校级奖项及各类资格证书</p>
+            <div class="section-divider"></div>
+        </div>
+    
+        <div class="gallery-grid">
+    
+            <!-- ====================== 1. 国家级荣誉 ====================== -->
+            <div class="gallery-item" data-category="cert">
+                <img loading="lazy" src="images/certificate/商业精英  国一.png" alt="商业精英 国一">
+                <div class="gallery-overlay">
+                    <h4>商业精英挑战赛 国家一等奖</h4>
+                    <p>国家级荣誉</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="cert">
+                <img loading="lazy" src="images/certificate/27届机器人  国三.jpg" alt="机器人 国三">
+                <div class="gallery-overlay">
+                    <h4>第27届机器人及人工智能大赛 全国三等奖</h4>
+                    <p>国家级荣誉</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="cert">
+                <img loading="lazy" src="images/certificate/大创金奖.jpg" alt="大创金奖">
+                <div class="gallery-overlay">
+                    <h4>大学生创新创业大赛 金奖</h4>
+                    <p>国家级荣誉</p>
+                </div>
+            </div>
+    
+            <!-- ====================== 2. 省级荣誉 ====================== -->
+            <div class="gallery-item" data-category="cert">
+                <img loading="lazy" src="images/certificate/第27届机器人暨人工智能大赛 省级二等奖.jpg" alt="机器人 省二">
+                <div class="gallery-overlay">
+                    <h4>机器人及人工智能大赛 省级二等奖</h4>
+                    <p>省级荣誉</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="cert">
+                <img loading="lazy" src="images/certificate/第二届职业规划  省铜.png" alt="职业规划省铜">
+                <div class="gallery-overlay">
+                    <h4>第二届大学生职业规划大赛 省级铜奖</h4>
+                    <p>省级荣誉</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="cert">
+                <img loading="lazy" src="images/certificate/第18届中国大学生计算机设计大赛 省级三等奖.png" alt="计算机设计省三">
+                <div class="gallery-overlay">
+                    <h4>中国大学生计算机设计大赛 省级三等奖</h4>
+                    <p>省级荣誉</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="cert">
+                <img loading="lazy" src="images/certificate/第二十届智能车  华北赛区三等奖.png" alt="智能车华北三">
+                <div class="gallery-overlay">
+                    <h4>第二十届智能车 华北赛区三等奖</h4>
+                    <p>区域级荣誉</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="cert">
+                <img loading="lazy" src="images/certificate/商业精英挑战赛省一.jpg" alt="商业精英省一">
+                <div class="gallery-overlay">
+                    <h4>商业精英挑战赛 省一等奖</h4>
+                    <p>省级荣誉</p>
+                </div>
+            </div>
+    
+            <!-- ====================== 3. 院校级 / 院级荣誉 ====================== -->
+            <div class="gallery-item" data-category="cert">
+                <img loading="lazy" src="images/certificate/国家励志奖学金.jpg" alt="国家励志奖学金">
+                <div class="gallery-overlay">
+                    <h4>国家励志奖学金</h4>
+                    <p>2024-2025年度</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="cert">
+                <img loading="lazy" src="images/certificate/励志奖学金.jpg" alt="励志奖学金">
+                <div class="gallery-overlay">
+                    <h4>国家励志奖学金</h4>
+                    <p>2024-2025年度</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="cert">
+                <img loading="lazy" src="images/certificate/2024-2025  大学生年度人物.png" alt="大学生年度人物">
+                <div class="gallery-overlay">
+                    <h4>大学生年度人物</h4>
+                    <p>2025年度</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="cert">
+                <img loading="lazy" src="images/certificate/2024-2025  科技之星.png" alt="科技之星">
+                <div class="gallery-overlay">
+                    <h4>科技之星</h4>
+                    <p>院校级荣誉</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="cert">
+                <img loading="lazy" src="images/certificate/2024-2025 三好学生.jpg" alt="三好学生">
+                <div class="gallery-overlay">
+                    <h4>三好学生</h4>
+                    <p>2024-2025年度</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="cert">
+                <img loading="lazy" src="images/certificate/2025 大创校一等.jpg" alt="大创校一">
+                <div class="gallery-overlay">
+                    <h4>大学生创新创业大赛 校一等奖</h4>
+                    <p>院校级荣誉</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="cert">
+                <img loading="lazy" src="images/certificate/27届机器人校一.jpg" alt="机器人校一">
+                <div class="gallery-overlay">
+                    <h4>第27届机器人校一等奖</h4>
+                    <p>院校级荣誉</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="cert">
+                <img loading="lazy" src="images/certificate/商业精英挑战赛校三.jpg" alt="商业精英校三">
+                <div class="gallery-overlay">
+                    <h4>商业精英挑战赛 校三等奖</h4>
+                    <p>院校级荣誉</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="cert">
+                <img loading="lazy" src="images/certificate/第27届机器人校一.png" alt="机器人校一">
+                <div class="gallery-overlay">
+                    <h4>第27届机器人校一等奖</h4>
+                    <p>院校级荣誉</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="cert">
+                <img loading="lazy" src="images/certificate/第11届机器人校三.png" alt="机器人校三">
+                <div class="gallery-overlay">
+                    <h4>第11届机器人校三等奖</h4>
+                    <p>院校级荣誉</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="cert">
+                <img loading="lazy" src="images/certificate/十一届机器人 校三.jpg" alt="十一届机器人校三">
+                <div class="gallery-overlay">
+                    <h4>第十一届机器人校三等奖</h4>
+                    <p>院校级荣誉</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="cert">
+                <img loading="lazy" src="images/certificate/第18届计算机  校二.png" alt="计算机校二">
+                <div class="gallery-overlay">
+                    <h4>第18届计算机设计大赛 校二等奖</h4>
+                    <p>院校级荣誉</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="cert">
+                <img loading="lazy" src="images/certificate/十八届计算机 校二.jpg" alt="十八届计算机校二">
+                <div class="gallery-overlay">
+                    <h4>第十八届计算机校二等奖</h4>
+                    <p>院校级荣誉</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="cert">
+                <img loading="lazy" src="images/certificate/第二十届智能车  校一.jpg" alt="智能车校一">
+                <div class="gallery-overlay">
+                    <h4>第二十届智能车 校一等奖</h4>
+                    <p>院校级荣誉</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="cert">
+                <img loading="lazy" src="images/certificate/二十届智能车  校一.jpg" alt="二十届智能车校一">
+                <div class="gallery-overlay">
+                    <h4>第二十届智能车 校一等奖</h4>
+                    <p>院校级荣誉</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="cert">
+                <img loading="lazy" src="images/certificate/职业规划 校一.jpg" alt="职业规划校一">
+                <div class="gallery-overlay">
+                    <h4>职业规划大赛 校一等奖</h4>
+                    <p>院校级荣誉</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="cert">
+                <img loading="lazy" src="images/certificate/职业规划院一.jpg" alt="职业规划院一">
+                <div class="gallery-overlay">
+                    <h4>职业规划大赛 院一等奖</h4>
+                    <p>院级荣誉</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="cert">
+                <img loading="lazy" src="images/certificate/职业规划 院一.jpg" alt="职业规划院一">
+                <div class="gallery-overlay">
+                    <h4>职业规划大赛 院一等奖</h4>
+                    <p>院级荣誉</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="cert">
+                <img loading="lazy" src="images/certificate/职业规划 校铜奖.png" alt="职业规划校铜">
+                <div class="gallery-overlay">
+                    <h4>职业规划大赛 校铜奖</h4>
+                    <p>院校级荣誉</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="cert">
+                <img loading="lazy" src="images/certificate/社团优秀负责人.jpg" alt="社团优秀负责人">
+                <div class="gallery-overlay">
+                    <h4>社团优秀负责人</h4>
+                    <p>院校级荣誉</p>
+                </div>
+            </div>
+    
+            <!-- ====================== 4. 专业资格证书 ====================== -->
+            <div class="gallery-item" data-category="cert">
+                <img loading="lazy" src="images/certificate/大数据分析师（中级）.jpg" alt="大数据分析师">
+                <div class="gallery-overlay">
+                    <h4>大数据分析师（中级）</h4>
+                    <p>专业资格证书</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="cert">
+                <img loading="lazy" src="images/certificate/普通话证书.jpg" alt="普通话证书">
+                <div class="gallery-overlay">
+                    <h4>普通话水平测试等级证书</h4>
+                    <p>资格证书</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="cert">
+                <img loading="lazy" src="images/certificate/人工智能训练师.jpg" alt="人工智能训练师">
+                <div class="gallery-overlay">
+                    <h4>人工智能训练师证书</h4>
+                    <p>专业资格证书</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="cert">
+                <img loading="lazy" src="images/certificate/智能网联汽车安全员.jpg" alt="智能网联汽车安全员">
+                <div class="gallery-overlay">
+                    <h4>智能网联汽车安全员（高级）</h4>
+                    <p>专业资格证书</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="cert">
+                <img loading="lazy" src="images/certificate/无人机驾驶资格证.jpg" alt="无人机驾驶资格证">
+                <div class="gallery-overlay">
+                    <h4>无人机驾驶资格证</h4>
+                    <p>专业资格证书</p>
+                </div>
+            </div>
+    
+            <!-- ====================== 5. 实习 / 社会实践 / 培训 / 科研 ====================== -->
+            <div class="gallery-item" data-category="cert">
+                <img loading="lazy" src="images/certificate/校级科研项目.jpg" alt="校级科研项目">
+                <div class="gallery-overlay">
+                    <h4>校园科研训练项目 结项</h4>
+                    <p>科研项目</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="cert">
+                <img loading="lazy" src="images/certificate/社科联市三.jpg" alt="社科联市三">
+                <div class="gallery-overlay">
+                    <h4>焦作市社科联项目 结项</h4>
+                    <p>科研项目（第三作者）</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="cert">
+                <img loading="lazy" src="images/certificate/兼职副书记 优秀.jpg" alt="兼职副书记">
+                <div class="gallery-overlay">
+                    <h4>兼职团委副书记 优秀</h4>
+                    <p>社会实践</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="cert">
+                <img loading="lazy" src="images/certificate/2024暑期社会实践先进个人.jpg" alt="暑期实践先进个人">
+                <div class="gallery-overlay">
+                    <h4>暑假社会实践先进个人</h4>
+                    <p>2024年度</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="cert">
+                <img loading="lazy" src="images/certificate/2025寒假社会实践先进个人.png" alt="寒假实践先进个人">
+                <div class="gallery-overlay">
+                    <h4>寒假社会实践先进个人</h4>
+                    <p>2025年度</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="cert">
+                <img loading="lazy" src="images/certificate/师资班结课.jpg" alt="师资班结课">
+                <div class="gallery-overlay">
+                    <h4>师资班结课证书</h4>
+                    <p>培训证书</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="cert">
+                <img loading="lazy" src="images/certificate/党员云课堂结业证书.png" alt="党员云课堂">
+                <div class="gallery-overlay">
+                    <h4>党员云课堂结业证书</h4>
+                    <p>培训证书</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="cert">
+                <img loading="lazy" src="images/certificate/一高寒假.jpg" alt="一高寒假实践">
+                <div class="gallery-overlay">
+                    <h4>一高寒假社会实践</h4>
+                    <p>社会实践</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="cert">
+                <img loading="lazy" src="images/certificate/一高暑假.jpg" alt="一高暑假实践">
+                <div class="gallery-overlay">
+                    <h4>一高暑假社会实践</h4>
+                    <p>社会实践</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="cert">
+                <img loading="lazy" src="images/certificate/寒假农商银行实践.jpg" alt="农商银行实践">
+                <div class="gallery-overlay">
+                    <h4>寒假农商银行社会实践</h4>
+                    <p>社会实践</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="cert">
+                <img loading="lazy" src="images/certificate/立哲实习.png" alt="立哲实习">
+                <div class="gallery-overlay">
+                    <h4>立哲实习证明</h4>
+                    <p>实习经历</p>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="cert">
+                <img loading="lazy" src="images/certificate/蔚禾实习.png" alt="蔚禾实习">
+                <div class="gallery-overlay">
+                    <h4>蔚禾实习证明</h4>
+                    <p>实习经历</p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    
+    <!-- 图片放大灯箱 -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <span class="lightbox-prev">&#10094;</span>
+        <span class="lightbox-next">&#10095;</span>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="">
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+        </div>
+    </div>
+    
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="images/logo.svg" alt="成长之路">
+                    <span>成长之路</span>
+                </div>
+                <p>张迎奥同学的个人网站，记录成长历程、分享技术实践、展示荣誉成果。</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-css3-alt"></i></a>
+                    <a href="#"><i class="fas fa-envelope"></i></a>
+                    <a href="#"><i class="fab fa-weixin"></i></a>
+                    <a href="https://www.zjtu.edu.cn" target="_blank"><i class="fas fa-school"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>快速导航</h4>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> 主页</a></li>
+                    <li><a href="courses.html"><i class="fas fa-chevron-right"></i> 成果展示</a></li>
+                    <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> 技术实践</a></li>
+                    <li><a href="game.html"><i class="fas fa-chevron-right"></i> 猜数字</a></li>
+                    <li><a href="about.html"><i class="fas fa-chevron-right"></i> 关于我</a></li>
+                    <li><a href="contact.html"><i class="fas fa-chevron-right"></i> 联系我</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>友情链接</h4>
+                <ul>
+                    <li><a href="https://www.zjtu.edu.cn" target="_blank"><i class="fas fa-external-link-alt"></i> 黄河交通学院</a></li>
+                    <li><a href="https://www.runoob.com" target="_blank"><i class="fas fa-external-link-alt"></i> 菜鸟教程</a></li>
+                    <li><a href="https://github.com" target="_blank"><i class="fas fa-external-link-alt"></i> GitHub</a></li>
+                    <li><a href="https://developer.mozilla.org" target="_blank"><i class="fas fa-external-link-alt"></i> MDN 文档</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>联系方式</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> <span>河南省焦作市<br>黄河交通学院 人工智能学院</span></li>
+                    <li><i class="fas fa-envelope"></i> <span>z896230@outlook.com</span></li>
+                    <li><i class="fas fa-phone"></i> <span>+86 18439196508</span></li>
+                    <li><i class="fas fa-clock"></i> <span class="header-time"></span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024-2026 张迎奥同学个人成长展示与技术实践分享. All Rights Reserved. | 黄河交通学院 人工智能学院</p>
+            <div class="footer-bottom-links">
+                <a href="index.html">主页</a>
+                <a href="about.html">关于</a>
+                <a href="contact.html">联系</a>
+            </div>
+        </div>
+    </footer>
+    
+    <button class="back-to-top"><i class="fas fa-arrow-up"></i></button>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var lightbox = document.getElementById('lightbox');
+        var lightboxImg = document.getElementById('lightbox-img');
+        var lightboxCaption = document.getElementById('lightbox-caption');
+        var closeBtn = document.querySelector('.lightbox-close');
+        var prevBtn = document.querySelector('.lightbox-prev');
+        var nextBtn = document.querySelector('.lightbox-next');
+        var items = document.querySelectorAll('.gallery-item');
+        var currentIndex = 0;
+    
+        function openLightbox(index) {
+            currentIndex = index;
+            var item = items[index];
+            var img = item.querySelector('img');
+            lightboxImg.src = img.src;
+            var overlay = item.querySelector('.gallery-overlay');
+            if (overlay) {
+                var title = overlay.querySelector('h4');
+                var desc = overlay.querySelector('p');
+                lightboxCaption.textContent = (title ? title.textContent : '') + ' — ' + (desc ? desc.textContent : '');
+            } else {
+                lightboxCaption.textContent = img.getAttribute('alt') || '';
+            }
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+    
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + items.length) % items.length;
+            openLightbox(currentIndex);
+        }
+    
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % items.length;
+            openLightbox(currentIndex);
+        }
+    
+        items.forEach(function(item, index) {
+            item.addEventListener('click', function(e) {
+                if (e.target.closest('.gallery-overlay')) return;
+                openLightbox(index);
+            });
+        });
+    
+        if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+        if (prevBtn) prevBtn.addEventListener('click', prevImage);
+        if (nextBtn) nextBtn.addEventListener('click', nextImage);
+    
+        document.addEventListener('keydown', function(e) {
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') prevImage();
+            if (e.key === 'ArrowRight') nextImage();
+        });
+    
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox) closeLightbox();
+        });
+    });
+    </script>
+</body>
+</html>

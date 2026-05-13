@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="联系我 - 张迎奥同学个人成长展示与技术实践分享">
+    <title>联系我 - 张迎奥同学个人成长展示与技术实践分享</title>
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="loader">
+        <div class="loader-spinner"></div>
+        <div class="loader-text">加载中...</div>
+        <div class="loader-progress"><div class="loader-progress-bar"></div></div>
+    </div>
+    
+    <canvas id="particles-canvas"></canvas>
+    
+    <nav class="navbar scrolled">
+        <div class="logo">
+            <a href="index.html"><img src="images/logo.svg" alt="个人成长之路 logo"></a>
+            <span class="logo-text">成长之路</span>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html"><i class="fas fa-home"></i> 主页</a></li>
+            <li><a href="courses.html"><i class="fas fa-trophy"></i> 成果展示</a></li>
+            <li><a href="gallery.html"><i class="fas fa-code"></i> 技术实践</a></li>
+            <li><a href="game.html"><i class="fas fa-gamepad"></i> 猜数字</a></li>
+            <li><a href="about.html"><i class="fas fa-user"></i> 关于我</a></li>
+            <li><a href="contact.html" class="active"><i class="fas fa-envelope"></i> 联系我</a></li>
+            <li><span class="header-time"></span></li>
+        </ul>
+        <div class="nav-toggle"><span></span><span></span><span></span></div>
+    </nav>
+    
+    <section class="page-banner">
+        <div class="banner-shapes"><span></span><span></span><span></span></div>
+        <h1>联系我</h1>
+        <p>期待与您的交流与合作，欢迎随时联系</p>
+    </section>
+    
+    <!-- 联系信息与表单 -->
+    <section class="section">
+        <div class="section-header reveal">
+            <span class="subtitle"><i class="fas fa-envelope"></i> 联系方式</span>
+            <h2>与我 <span class="highlight">取得联系</span></h2>
+            <p>河南省焦作市黄河交通学院 人工智能学院 · 张迎奥</p>
+            <p>无论您有任何问题、建议或合作意向，都欢迎与我联系</p>
+            <div class="section-divider"></div>
+        </div>
+    
+        <div class="contact-grid">
+            <!-- 联系表单 -->
+            <div class="contact-form-wrap reveal-left">
+                <form id="contactForm" action="https://formsubmit.co/z896230@outlook.com" method="POST">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="contact.html?success=true">
+                    <p class="form-hint" style="margin-bottom:16px;color:var(--text-secondary);font-size:0.95rem;line-height:1.5;">
+                        如果你在本地文件模式下打开本页面，表单提交可能无法正常工作。建议将网站部署到在线服务器（例如 GitHub Pages），或者直接点击下面的邮箱链接发送邮件。
+                        <br><a href="mailto:z896230@outlook.com?subject=网站联系我的留言" style="color:var(--accent-1);text-decoration:underline;">直接发送邮件给 z896230@outlook.com</a>
+                    </p>
+                    <div class="form-group">
+                        <label for="name">您的姓名</label>
+                        <div class="input-wrap">
+                            <span class="input-icon"><i class="fas fa-user"></i></span>
+                            <input type="text" id="name" name="name" placeholder="请输入您的姓名" required>
+                            <span class="input-highlight"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">电子邮箱</label>
+                        <div class="input-wrap">
+                            <span class="input-icon"><i class="fas fa-envelope"></i></span>
+                            <input type="email" id="email" name="email" placeholder="请输入您的邮箱" required>
+                            <span class="input-highlight"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">主题</label>
+                        <div class="input-wrap">
+                            <span class="input-icon"><i class="fas fa-tag"></i></span>
+                            <select id="subject" name="subject">
+                                <option value="">请选择主题</option>
+                                <option value="学习交流">学习交流</option>
+                                <option value="项目合作">项目合作</option>
+                                <option value="意见建议">意见建议</option>
+                                <option value="其他">其他</option>
+                            </select>
+                            <span class="input-highlight"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">留言内容</label>
+                        <div class="input-wrap">
+                            <span class="input-icon"><i class="fas fa-comment"></i></span>
+                            <textarea id="message" name="message" placeholder="请输入您的留言内容..." required></textarea>
+                            <span class="input-highlight"></span>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i class="fas fa-paper-plane"></i> 发送消息
+                    </button>
+                </form>
+            </div>
+    
+            <!-- 联系信息卡片 -->
+            <div class="contact-info-grid reveal-right">
+                <div class="contact-info-card">
+                    <div class="ci-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="ci-text">
+                        <h4>学校地址</h4>
+                        <p>河南省焦作市<br>黄河交通学院 人工智能学院</p>
+                    </div>
+                </div>
+                <div class="contact-info-card">
+                    <div class="ci-icon"><i class="fas fa-envelope"></i></div>
+                    <div class="ci-text">
+                        <h4>电子邮箱</h4>
+                        <p>z896230@outlook.com</p>
+                    </div>
+                </div>
+                <div class="contact-info-card">
+                    <div class="ci-icon"><i class="fas fa-phone"></i></div>
+                    <div class="ci-text">
+                        <h4>联系电话</h4>
+                        <p>+86 18439196508</p>
+                    </div>
+                </div>
+                <div class="contact-info-card">
+                    <div class="ci-icon"><i class="fas fa-clock"></i></div>
+                    <div class="ci-text">
+                        <h4>在线时间</h4>
+                        <p>周一至周五：9:00 - 18:00<br>周末：可预约</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 地图区域 -->
+    <section class="section" style="padding-top:0">
+        <div class="section-header reveal">
+            <span class="subtitle"><i class="fas fa-map"></i> 位置信息</span>
+            <h2>我们的 <span class="highlight">地理位置</span></h2>
+            <div class="section-divider"></div>
+        </div>
+        <div style="max-width:1000px;margin:0 auto;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--glass-border);background:var(--glass-bg);padding:40px;text-align:center">
+            <i class="fas fa-map-marked-alt" style="font-size:3rem;color:var(--accent-1);margin-bottom:20px;display:block"></i>
+            <h3 style="margin-bottom:15px">黄河交通学院 人工智能学院</h3>
+            <p style="color:var(--text-secondary);margin-bottom:25px">河南省焦作市武陟县迎宾大道333号</p>
+            <div style="width:100%;height:300px;border-radius:var(--radius-md);background:linear-gradient(135deg,rgba(0,212,255,0.05),rgba(123,47,247,0.05));display:flex;align-items:center;justify-content:center;border:1px solid var(--glass-border)">
+                <div style="text-align:center">
+                    <i class="fas fa-map-pin" style="font-size:3rem;color:var(--accent-3);margin-bottom:10px;display:block"></i>
+                    <p style="color:var(--text-muted)">📍 黄河交通学院 · 人工智能学院</p>
+                    <p style="color:var(--text-muted);font-size:0.85rem;margin-top:8px">河南省焦作市武陟县迎宾大道333号</p>
+                    <a href="https://www.zjtu.edu.cn" target="_blank" class="btn btn-sm btn-primary" style="margin-top:15px"><i class="fas fa-external-link-alt"></i> 访问学校官网</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 社交 -->
+    <section class="section" style="background:rgba(255,255,255,0.02)">
+        <div class="section-header reveal">
+            <span class="subtitle"><i class="fas fa-share-alt"></i> 社交媒体</span>
+            <h2>关注 <span class="highlight">我的动态</span></h2>
+            <p>在各大平台关注我，获取最新分享</p>
+            <div class="section-divider"></div>
+        </div>
+    
+        <div class="features-grid" style="max-width:800px">
+            <div class="feature-card reveal">
+                <div class="icon-wrap icon-1"><i class="fab fa-github"></i></div>
+                <h3>GitHub</h3>
+                <p>关注我的开源项目，查看代码仓库和技术实践。</p>
+            </div>
+            <div class="feature-card reveal" style="transition-delay:0.1s">
+                <div class="icon-wrap icon-2"><i class="fab fa-css3-alt"></i></div>
+                <h3>技术博客</h3>
+                <p>分享学习笔记、技术文章和项目经验总结。</p>
+            </div>
+            <div class="feature-card reveal" style="transition-delay:0.2s">
+                <div class="icon-wrap icon-3"><i class="fab fa-weixin"></i></div>
+                <h3>微信公众号</h3>
+                <p>定期推送前端技术文章和学习资源推荐。</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="images/logo.svg" alt="成长之路">
+                    <span>成长之路</span>
+                </div>
+                <p>张迎奥同学的个人网站，记录成长历程、分享技术实践、展示荣誉成果。</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-css3-alt"></i></a>
+                    <a href="#"><i class="fas fa-envelope"></i></a>
+                    <a href="#"><i class="fab fa-weixin"></i></a>
+                    <a href="https://www.zjtu.edu.cn" target="_blank"><i class="fas fa-school"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>快速导航</h4>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> 主页</a></li>
+                    <li><a href="courses.html"><i class="fas fa-chevron-right"></i> 成果展示</a></li>
+                    <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> 技术实践</a></li>
+                    <li><a href="game.html"><i class="fas fa-chevron-right"></i> 猜数字</a></li>
+                    <li><a href="about.html"><i class="fas fa-chevron-right"></i> 关于我</a></li>
+                    <li><a href="contact.html"><i class="fas fa-chevron-right"></i> 联系我</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>友情链接</h4>
+                <ul>
+                    <li><a href="https://www.zjtu.edu.cn" target="_blank"><i class="fas fa-external-link-alt"></i> 黄河交通学院</a></li>
+                    <li><a href="https://www.runoob.com" target="_blank"><i class="fas fa-external-link-alt"></i> 菜鸟教程</a></li>
+                    <li><a href="https://github.com" target="_blank"><i class="fas fa-external-link-alt"></i> GitHub</a></li>
+                    <li><a href="https://developer.mozilla.org" target="_blank"><i class="fas fa-external-link-alt"></i> MDN 文档</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>联系方式</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> <span>河南省焦作市<br>黄河交通学院 人工智能学院</span></li>
+                    <li><i class="fas fa-envelope"></i> <span>z896230@outlook.com</span></li>
+                    <li><i class="fas fa-phone"></i> <span>+86 18439196508</span></li>
+                    <li><i class="fas fa-clock"></i> <span class="header-time"></span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024-2026 张迎奥同学个人成长展示与技术实践分享. All Rights Reserved. | 黄河交通学院 人工智能学院</p>
+            <div class="footer-bottom-links">
+                <a href="index.html">主页</a>
+                <a href="about.html">关于</a>
+                <a href="contact.html">联系</a>
+            </div>
+        </div>
+    </footer>
+    
+    <button class="back-to-top"><i class="fas fa-arrow-up"></i></button>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

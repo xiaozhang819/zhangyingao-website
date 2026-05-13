@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="技术实践 - 张迎奥同学技术实践分享">
+    <title>技术实践 - 张迎奥同学个人成长展示与技术实践分享</title>
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="loader">
+        <div class="loader-spinner"></div>
+        <div class="loader-text">加载中...</div>
+        <div class="loader-progress"><div class="loader-progress-bar"></div></div>
+    </div>
+    
+    <canvas id="particles-canvas"></canvas>
+    
+    <nav class="navbar scrolled">
+        <div class="logo">
+            <a href="index.html"><img src="images/logo.svg" alt="个人成长之路 logo"></a>
+            <span class="logo-text">成长之路</span>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html"><i class="fas fa-home"></i> 主页</a></li>
+            <li><a href="courses.html"><i class="fas fa-trophy"></i> 成果展示</a></li>
+            <li><a href="gallery.html" class="active"><i class="fas fa-code"></i> 技术实践</a></li>
+            <li><a href="game.html"><i class="fas fa-gamepad"></i> 猜数字</a></li>
+            <li><a href="about.html"><i class="fas fa-user"></i> 关于我</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> 联系我</a></li>
+            <li><span class="header-time"></span></li>
+        </ul>
+        <div class="nav-toggle"><span></span><span></span><span></span></div>
+    </nav>
+    
+    <section class="page-banner">
+        <div class="banner-shapes"><span></span><span></span><span></span></div>
+        <h1>技术实践</h1>
+        <p>用技术探索创新，以实践锤炼技能</p>
+    </section>
+    
+    <!-- 标签云 -->
+    <section class="section" style="padding-bottom:0">
+        <div class="tag-cloud">
+            <span><i class="fab fa-html5"></i> HTML5</span>
+            <span><i class="fab fa-css3-alt"></i> CSS3</span>
+            <span><i class="fab fa-js"></i> JavaScript</span>
+            <span><i class="fab fa-vuejs"></i> Vue.js</span>
+            <span><i class="fab fa-react"></i> React</span>
+            <span><i class="fab fa-node-js"></i> Node.js</span>
+            <span><i class="fab fa-python"></i> Python</span>
+            <span><i class="fas fa-heart"></i> 热爱</span>
+        </div>
+    </section>
+    
+    <!-- 图库筛选 -->
+    <section class="section">
+        <div class="section-header reveal">
+            <span class="subtitle"><i class="fas fa-code"></i> 技术时间</span>
+            <h2>我的 <span class="highlight">技术作品</span></h2>
+            <p>用代码构建未来，以创新引领成长</p>
+            <div class="section-divider"></div>
+        </div>
+    
+        <div class="gallery-filters">
+            <button class="active" data-filter="all"><i class="fas fa-th"></i> 全部</button>
+            <button data-filter="frontend"><i class="fas fa-code"></i> 前端开发</button>
+            <button data-filter="design"><i class="fas fa-paint-brush"></i> UI/UX设计</button>
+            <button data-filter="study"><i class="fas fa-book"></i> 学习笔记</button>
+            <button data-filter="life"><i class="fas fa-camera"></i> 技术生活</button>
+        </div>
+    
+        <div class="gallery-grid">
+            <div class="gallery-item" data-category="frontend">
+                <img src="images/gallery1.svg" alt="前端开发">
+                <div class="gallery-overlay">
+                    <h4>前端开发项目</h4>
+                    <p>HTML5 / CSS3 / JavaScript</p>
+                    <div class="gallery-zoom"><i class="fas fa-expand"></i></div>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="study">
+                <img src="images/gallery2.svg" alt="算法思维">
+                <div class="gallery-overlay">
+                    <h4>算法学习笔记</h4>
+                    <p>数据结构与算法设计</p>
+                    <div class="gallery-zoom"><i class="fas fa-expand"></i></div>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="design">
+                <img src="images/gallery3.svg" alt="创意设计">
+                <div class="gallery-overlay">
+                    <h4>UI/UX 设计作品</h4>
+                    <p>视觉设计与交互体验</p>
+                    <div class="gallery-zoom"><i class="fas fa-expand"></i></div>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="life">
+                <img src="images/gallery4.svg" alt="团队协作">
+                <div class="gallery-overlay">
+                    <h4>团队合作时刻</h4>
+                    <p>协作与沟通的艺术</p>
+                    <div class="gallery-zoom"><i class="fas fa-expand"></i></div>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="study">
+                <img src="images/gallery5.svg" alt="终身学习">
+                <div class="gallery-overlay">
+                    <h4>学习成果展示</h4>
+                    <p>持续学习，不断进步</p>
+                    <div class="gallery-zoom"><i class="fas fa-expand"></i></div>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="design">
+                <img src="images/gallery1.svg" alt="设计作品">
+                <div class="gallery-overlay">
+                    <h4>网页设计作品</h4>
+                    <p>创意与技术的融合</p>
+                    <div class="gallery-zoom"><i class="fas fa-expand"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 引用 -->
+    <section class="section">
+        <div class="quote-block reveal">
+            <i class="fas fa-quote-right"></i>
+            <blockquote>技术是实践的结晶，每一行代码都是通向未来的阶梯。</blockquote>
+            <div class="quote-author">—— 技术感悟</div>
+        </div>
+    </section>
+    
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="images/logo.svg" alt="成长之路">
+                    <span>成长之路</span>
+                </div>
+                <p>张迎奥同学的个人网站，记录成长历程、分享技术实践、展示荣誉成果。</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-css3-alt"></i></a>
+                    <a href="#"><i class="fas fa-envelope"></i></a>
+                    <a href="#"><i class="fab fa-weixin"></i></a>
+                    <a href="https://www.zjtu.edu.cn" target="_blank"><i class="fas fa-school"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>快速导航</h4>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> 主页</a></li>
+                    <li><a href="courses.html"><i class="fas fa-chevron-right"></i> 成果展示</a></li>
+                    <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> 技术实践</a></li>
+                    <li><a href="game.html"><i class="fas fa-chevron-right"></i> 猜数字</a></li>
+                    <li><a href="about.html"><i class="fas fa-chevron-right"></i> 关于我</a></li>
+                    <li><a href="contact.html"><i class="fas fa-chevron-right"></i> 联系我</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>友情链接</h4>
+                <ul>
+                    <li><a href="https://www.zjtu.edu.cn" target="_blank"><i class="fas fa-external-link-alt"></i> 黄河交通学院</a></li>
+                    <li><a href="https://www.runoob.com" target="_blank"><i class="fas fa-external-link-alt"></i> 菜鸟教程</a></li>
+                    <li><a href="https://github.com" target="_blank"><i class="fas fa-external-link-alt"></i> GitHub</a></li>
+                    <li><a href="https://developer.mozilla.org" target="_blank"><i class="fas fa-external-link-alt"></i> MDN 文档</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>联系方式</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> <span>河南省焦作市<br>黄河交通学院 人工智能学院</span></li>
+                    <li><i class="fas fa-envelope"></i> <span>z896230@outlook.com</span></li>
+                    <li><i class="fas fa-phone"></i> <span>+86 18439196508</span></li>
+                    <li><i class="fas fa-clock"></i> <span class="header-time"></span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024-2026 张迎奥同学个人成长展示与技术实践分享. All Rights Reserved. | 黄河交通学院 人工智能学院</p>
+            <div class="footer-bottom-links">
+                <a href="index.html">主页</a>
+                <a href="about.html">关于</a>
+                <a href="contact.html">联系</a>
+            </div>
+        </div>
+    </footer>
+    
+    <button class="back-to-top"><i class="fas fa-arrow-up"></i></button>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

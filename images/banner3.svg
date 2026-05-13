@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 600" width="1920" height="600">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0e27"/>
+      <stop offset="50%" style="stop-color:#002233"/>
+      <stop offset="100%" style="stop-color:#0a0e27"/>
+    </linearGradient>
+    <linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00e676"/>
+      <stop offset="100%" style="stop-color:#00d4ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="600" fill="url(#bg3)"/>
+  <!-- 装饰圈 -->
+  <circle cx="960" cy="300" r="350" fill="#00d4ff" opacity="0.03"/>
+  <circle cx="960" cy="300" r="250" fill="#00e676" opacity="0.03"/>
+  <!-- 数据流线条 -->
+  <g stroke="url(#g3)" stroke-width="1.5" opacity="0.08" fill="none">
+    <path d="M0 200 Q 200 100, 400 200 T 800 200 T 1200 200 T 1600 200 T 1920 200"/>
+    <path d="M0 400 Q 200 500, 400 400 T 800 400 T 1200 400 T 1600 400 T 1920 400"/>
+    <path d="M0 300 Q 300 200, 600 300 T 1200 300 T 1920 300" stroke-width="0.5"/>
+  </g>
+  <!-- 柱状图装饰 -->
+  <g fill="#00d4ff" opacity="0.06">
+    <rect x="1400" y="250" width="30" height="200" rx="4"/>
+    <rect x="1450" y="280" width="30" height="170" rx="4"/>
+    <rect x="1500" y="230" width="30" height="220" rx="4"/>
+    <rect x="1550" y="300" width="30" height="150" rx="4"/>
+    <rect x="1600" y="260" width="30" height="190" rx="4"/>
+  </g>
+  <!-- 星星 -->
+  <g fill="#fff">
+    <circle cx="150" cy="80" r="2" opacity="0.7"/><circle cx="350" cy="150" r="1.5" opacity="0.5"/>
+    <circle cx="550" cy="90" r="2.5" opacity="0.8"/><circle cx="750" cy="160" r="1" opacity="0.4"/>
+    <circle cx="1000" cy="70" r="2" opacity="0.6"/><circle cx="1200" cy="140" r="1.5" opacity="0.5"/>
+    <circle cx="1450" cy="80" r="2" opacity="0.7"/><circle cx="1700" cy="150" r="1" opacity="0.4"/>
+  </g>
+  <text x="200" y="240" font-family="'Microsoft YaHei',sans-serif" font-size="60" font-weight="bold" fill="#fff">终身学习，持续进步</text>
+  <text x="200" y="310" font-family="'Microsoft YaHei',sans-serif" font-size="22" fill="#b0b8d1">在这个快速变化的时代，保持学习的热情和动力</text>
+  <rect x="200" y="350" width="160" height="48" rx="24" fill="url(#g3)" opacity="0.9"/>
+  <text x="280" y="380" font-family="'Microsoft YaHei',sans-serif" font-size="16" fill="#fff" text-anchor="middle" font-weight="bold">即刻启程 →</text>
+</svg>

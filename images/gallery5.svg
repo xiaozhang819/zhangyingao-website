@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="gw5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0e27"/>
+      <stop offset="100%" style="stop-color:#1a1040"/>
+    </linearGradient>
+    <linearGradient id="gg5" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00d4ff"/>
+      <stop offset="100%" style="stop-color:#ffd740"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#gw5)"/>
+  <circle cx="400" cy="300" r="300" fill="url(#gg5)" opacity="0.03"/>
+  <!-- 书籍装饰 -->
+  <g fill="#fff" opacity="0.04">
+    <rect x="300" y="380" width="200" height="140" rx="5"/>
+    <rect x="310" y="390" width="180" height="120" rx="3"/>
+    <line x1="400" y1="390" x2="400" y2="510" stroke="#fff" stroke-width="1"/>
+    <text x="380" y="460" font-family="'Courier New',monospace" font-size="20" fill="#fff" opacity="0.5">📖</text>
+  </g>
+  <text x="400" y="260" font-family="'Microsoft YaHei',sans-serif" font-size="42" fill="#fff" text-anchor="middle" font-weight="bold">终身学习</text>
+  <text x="400" y="310" font-family="'Microsoft YaHei',sans-serif" font-size="18" fill="#b0b8d1" text-anchor="middle">阅读 · 思考 · 不断进步</text>
+  <rect x="320" y="350" width="160" height="40" rx="20" fill="url(#gg5)" opacity="0.8"/>
+  <text x="400" y="376" font-family="'Microsoft YaHei',sans-serif" font-size="14" fill="#fff" text-anchor="middle" font-weight="bold">学习</text>
+  <g fill="#fff" opacity="0.05">
+    <circle cx="300" cy="150" r="15"/><circle cx="340" cy="120" r="10"/>
+    <circle cx="380" cy="140" r="12"/><circle cx="420" cy="110" r="8"/>
+    <circle cx="460" cy="145" r="14"/><circle cx="500" cy="125" r="10"/>
+  </g>
+</svg>

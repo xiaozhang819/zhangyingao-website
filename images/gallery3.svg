@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="gw3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0e27"/>
+      <stop offset="100%" style="stop-color:#002233"/>
+    </linearGradient>
+    <linearGradient id="gg3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00e676"/>
+      <stop offset="100%" style="stop-color:#00d4ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#gw3)"/>
+  <circle cx="400" cy="300" r="250" fill="#00e676" opacity="0.03"/>
+  <circle cx="400" cy="300" r="160" fill="#00d4ff" opacity="0.05"/>
+  <g stroke="url(#gg3)" stroke-width="1.5" opacity="0.08" fill="none">
+    <path d="M100 300 Q 250 150, 400 300 T 700 300"/>
+    <path d="M100 350 Q 250 200, 400 350 T 700 350"/>
+  </g>
+  <text x="400" y="260" font-family="'Microsoft YaHei',sans-serif" font-size="42" fill="#fff" text-anchor="middle" font-weight="bold">创意设计</text>
+  <text x="400" y="310" font-family="'Microsoft YaHei',sans-serif" font-size="18" fill="#b0b8d1" text-anchor="middle">UI/UX · 视觉设计 · 交互体验</text>
+  <rect x="320" y="350" width="160" height="40" rx="20" fill="url(#gg3)" opacity="0.8"/>
+  <text x="400" y="376" font-family="'Microsoft YaHei',sans-serif" font-size="14" fill="#fff" text-anchor="middle" font-weight="bold">设计</text>
+  <g fill="#fff" opacity="0.06">
+    <circle cx="300" cy="440" r="25"/>
+    <circle cx="370" cy="440" r="25"/>
+    <circle cx="440" cy="440" r="25"/>
+    <circle cx="510" cy="440" r="25"/>
+    <circle cx="335" cy="480" r="25"/>
+    <circle cx="405" cy="480" r="25"/>
+    <circle cx="475" cy="480" r="25"/>
+  </g>
+</svg>

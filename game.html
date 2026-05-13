@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="猜数字游戏 - 张迎奥同学个人成长展示与技术实践分享">
+    <title>猜数字 - 张迎奥同学个人成长展示与技术实践分享</title>
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .game-section {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+        .game-container {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: 50px 40px;
+            max-width: 560px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .game-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(0,212,255,0.05), transparent, rgba(123,47,247,0.05), transparent);
+            animation: game-rotate 8s linear infinite;
+            pointer-events: none;
+        }
+        @keyframes game-rotate {
+            to { transform: rotate(360deg); }
+        }
+        .game-inner {
+            position: relative;
+            z-index: 1;
+        }
+        .game-icon {
+            font-size: 3.5rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+        .game-container h2 {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+        .game-container p {
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
+        .game-range {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+        .game-range span {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-sm);
+            padding: 8px 20px;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        .game-range span i {
+            color: var(--accent-1);
+            margin-right: 6px;
+        }
+        .game-input-wrap {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+        .game-input-wrap input {
+            flex: 1;
+            max-width: 200px;
+            padding: 14px 20px;
+            border-radius: var(--radius-sm);
+            border: 2px solid var(--glass-border);
+            background: rgba(255,255,255,0.06);
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            text-align: center;
+            outline: none;
+            transition: var(--transition-fast);
+        }
+        .game-input-wrap input:focus {
+            border-color: var(--accent-1);
+            box-shadow: 0 0 20px rgba(0,212,255,0.15);
+        }
+        .game-input-wrap input:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .game-hint {
+            min-height: 50px;
+            padding: 12px 20px;
+            border-radius: var(--radius-sm);
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: var(--transition-fast);
+        }
+        .game-hint.hint-default {
+            background: rgba(255,255,255,0.04);
+            color: var(--text-muted);
+        }
+        .game-hint.hint-high {
+            background: rgba(255,107,107,0.12);
+            color: var(--accent-3);
+            border: 1px solid rgba(255,107,107,0.2);
+        }
+        .game-hint.hint-low {
+            background: rgba(0,230,118,0.12);
+            color: var(--accent-4);
+            border: 1px solid rgba(0,230,118,0.2);
+        }
+        .game-hint.hint-win {
+            background: rgba(0,212,255,0.12);
+            color: var(--accent-1);
+            border: 1px solid rgba(0,212,255,0.2);
+        }
+        .game-hint.hint-lose {
+            background: rgba(255,107,107,0.12);
+            color: var(--accent-3);
+            border: 1px solid rgba(255,107,107,0.2);
+        }
+        .game-stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 22px;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+        .game-stats span i {
+            color: var(--accent-1);
+            margin-right: 5px;
+        }
+        .game-history {
+            margin-bottom: 20px;
+            max-height: 100px;
+            overflow-y: auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            padding: 5px;
+        }
+        .game-history::-webkit-scrollbar {
+            width: 4px;
+        }
+        .game-history::-webkit-scrollbar-thumb {
+            background: var(--accent-1);
+            border-radius: 4px;
+        }
+        .history-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .history-badge.high {
+            background: rgba(255,107,107,0.15);
+            color: var(--accent-3);
+        }
+        .history-badge.low {
+            background: rgba(0,230,118,0.15);
+            color: var(--accent-4);
+        }
+        .history-badge.win {
+            background: rgba(0,212,255,0.15);
+            color: var(--accent-1);
+        }
+        .game-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .game-buttons .btn {
+            min-width: 120px;
+        }
+        @media (max-width: 480px) {
+            .game-container { padding: 30px 20px; }
+            .game-input-wrap { flex-direction: column; align-items: center; }
+            .game-input-wrap input { max-width: 100%; width: 100%; }
+            .game-stats { flex-direction: column; gap: 8px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="loader">
+        <div class="loader-spinner"></div>
+        <div class="loader-text">加载中...</div>
+        <div class="loader-progress"><div class="loader-progress-bar"></div></div>
+    </div>
+    
+    <canvas id="particles-canvas"></canvas>
+    
+    <nav class="navbar scrolled">
+        <div class="logo">
+            <a href="index.html"><img src="images/logo.svg" alt="个人成长之路 logo"></a>
+            <span class="logo-text">成长之路</span>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html"><i class="fas fa-home"></i> 主页</a></li>
+            <li><a href="courses.html"><i class="fas fa-trophy"></i> 成果展示</a></li>
+            <li><a href="gallery.html"><i class="fas fa-code"></i> 技术实践</a></li>
+            <li><a href="game.html" class="active"><i class="fas fa-gamepad"></i> 猜数字</a></li>
+            <li><a href="about.html"><i class="fas fa-user"></i> 关于我</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> 联系我</a></li>
+            <li><span class="header-time"></span></li>
+        </ul>
+        <div class="nav-toggle"><span></span><span></span><span></span></div>
+    </nav>
+    
+    <section class="page-banner">
+        <div class="banner-shapes"><span></span><span></span><span></span></div>
+        <h1>猜数字</h1>
+        <p>猜 0 ~ 100 之间的数字，看看你能几次猜对！</p>
+    </section>
+    
+    <section class="section game-section">
+        <div class="game-container">
+            <div class="game-inner">
+                <div class="game-icon"><i class="fas fa-dice"></i></div>
+                <h2>猜数字游戏</h2>
+                <p>系统已随机生成一个 0 ~ 100 之间的数字，快来猜猜看！</p>
+    
+                <div class="game-range">
+                    <span><i class="fas fa-arrow-down"></i> 0</span>
+                    <span><i class="fas fa-arrows-alt-h"></i> 范围</span>
+                    <span><i class="fas fa-arrow-up"></i> 100</span>
+                </div>
+    
+                <div class="game-input-wrap">
+                    <input type="number" id="guessInput" min="0" max="100" placeholder="输入数字" autofocus>
+                    <button class="btn btn-primary" id="guessBtn"><i class="fas fa-check"></i> 猜</button>
+                </div>
+    
+                <div class="game-hint hint-default" id="hintArea">
+                    <i class="fas fa-lightbulb"></i> 输入一个数字，点击"猜"开始
+                </div>
+    
+                <div class="game-stats">
+                    <span><i class="fas fa-counter"></i> 已猜 <strong id="attemptCount">0</strong> 次</span>
+                    <span><i class="fas fa-clock"></i> 用时 <strong id="timerDisplay">0</strong> 秒</span>
+                </div>
+    
+                <div class="game-history" id="historyArea"></div>
+    
+                <div class="game-buttons">
+                    <button class="btn btn-secondary" id="restartBtn"><i class="fas fa-redo"></i> 重新开始</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section">
+        <div class="quote-block reveal">
+            <i class="fas fa-quote-right"></i>
+            <blockquote>每一次尝试都是进步，无论猜对还是猜错，重要的是享受过程。</blockquote>
+            <div class="quote-author">—— 游戏感悟</div>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="images/logo.svg" alt="成长之路">
+                    <span>成长之路</span>
+                </div>
+                <p>张迎奥同学的个人网站，记录成长历程、分享技术实践、展示荣誉成果。</p>
+                <div class="footer-social">
+                    <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" title="CSDN"><i class="fab fa-css3-alt"></i></a>
+                    <a href="#" title="邮箱"><i class="fas fa-envelope"></i></a>
+                    <a href="#" title="微信"><i class="fab fa-weixin"></i></a>
+                    <a href="https://www.zjtu.edu.cn" target="_blank" title="学校官网"><i class="fas fa-school"></i></a>
+                </div>
+            </div>
+    
+            <div class="footer-links">
+                <h4>快速导航</h4>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> 主页</a></li>
+                    <li><a href="courses.html"><i class="fas fa-chevron-right"></i> 成果展示</a></li>
+                    <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> 技术实践</a></li>
+                    <li><a href="game.html"><i class="fas fa-chevron-right"></i> 猜数字</a></li>
+                    <li><a href="about.html"><i class="fas fa-chevron-right"></i> 关于我</a></li>
+                    <li><a href="contact.html"><i class="fas fa-chevron-right"></i> 联系我</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-links">
+                <h4>友情链接</h4>
+                <ul>
+                    <li><a href="https://www.zjtu.edu.cn" target="_blank"><i class="fas fa-external-link-alt"></i> 黄河交通学院</a></li>
+                    <li><a href="https://www.runoob.com" target="_blank"><i class="fas fa-external-link-alt"></i> 菜鸟教程</a></li>
+                    <li><a href="https://github.com" target="_blank"><i class="fas fa-external-link-alt"></i> GitHub</a></li>
+                    <li><a href="https://developer.mozilla.org" target="_blank"><i class="fas fa-external-link-alt"></i> MDN 文档</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-contact">
+                <h4>联系方式</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> <span>河南省焦作市<br>黄河交通学院 人工智能学院</span></li>
+                    <li><i class="fas fa-envelope"></i> <span>z896230@outlook.com</span></li>
+                    <li><i class="fas fa-phone"></i> <span>+86 18439196508</span></li>
+                    <li><i class="fas fa-clock"></i> <span class="header-time"></span></li>
+                </ul>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>&copy; 2024-2026 张迎奥同学个人成长展示与技术实践分享. All Rights Reserved. | 黄河交通学院 人工智能学院</p>
+            <div class="footer-bottom-links">
+                <a href="index.html">主页</a>
+                <a href="courses.html">成果</a>
+                <a href="contact.html">联系</a>
+            </div>
+        </div>
+    </footer>
+    
+    <button class="back-to-top"><i class="fas fa-arrow-up"></i></button>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // ---- Game State ----
+        let targetNumber = Math.floor(Math.random() * 101);
+        let attempts = 0;
+        let timerSeconds = 0;
+        let timerInterval = null;
+        let isGameOver = false;
+        const history = [];
+    
+        const guessInput = document.getElementById('guessInput');
+        const guessBtn = document.getElementById('guessBtn');
+        const restartBtn = document.getElementById('restartBtn');
+        const hintArea = document.getElementById('hintArea');
+        const attemptCount = document.getElementById('attemptCount');
+        const timerDisplay = document.getElementById('timerDisplay');
+        const historyArea = document.getElementById('historyArea');
+    
+        function startTimer() {
+            if (timerInterval) return;
+            timerInterval = setInterval(function() {
+                timerSeconds++;
+                timerDisplay.textContent = timerSeconds;
+            }, 1000);
+        }
+    
+        function stopTimer() {
+            clearInterval(timerInterval);
+            timerInterval = null;
+        }
+    
+        function resetGame() {
+            stopTimer();
+            targetNumber = Math.floor(Math.random() * 101);
+            attempts = 0;
+            timerSeconds = 0;
+            isGameOver = false;
+            history.length = 0;
+    
+            attemptCount.textContent = '0';
+            timerDisplay.textContent = '0';
+            guessInput.value = '';
+            guessInput.disabled = false;
+            guessInput.focus();
+            historyArea.innerHTML = '';
+    
+            hintArea.className = 'game-hint hint-default';
+            hintArea.innerHTML = '<i class="fas fa-lightbulb"></i> 输入一个数字，点击"猜"开始';
+        }
+    
+        function addHistory(num, type) {
+            history.push({ num: num, type: type });
+            const badge = document.createElement('span');
+            badge.className = 'history-badge ' + type;
+            badge.textContent = num;
+            historyArea.appendChild(badge);
+            historyArea.scrollTop = historyArea.scrollHeight;
+        }
+    
+        function setHint(className, icon, message) {
+            hintArea.className = 'game-hint ' + className;
+            hintArea.innerHTML = '<i class="fas ' + icon + '"></i> ' + message;
+        }
+    
+        function handleGuess() {
+            if (isGameOver) {
+                setHint('hint-default', 'fa-redo', '游戏已结束，点击"重新开始"再来一局吧！');
+                return;
+            }
+    
+            const raw = guessInput.value.trim();
+            if (raw === '') {
+                setHint('hint-default', 'fa-exclamation-circle', '请输入一个数字！');
+                return;
+            }
+            const guess = Number(raw);
+            if (!Number.isInteger(guess) || guess < 0 || guess > 100) {
+                setHint('hint-default', 'fa-exclamation-triangle', '请输入 0 ~ 100 之间的整数！');
+                guessInput.value = '';
+                return;
+            }
+    
+            // Start timer on first valid guess
+            if (attempts === 0) startTimer();
+    
+            attempts++;
+            attemptCount.textContent = attempts;
+    
+            if (guess === targetNumber) {
+                stopTimer();
+                isGameOver = true;
+                guessInput.disabled = true;
+                addHistory(guess, 'win');
+                setHint('hint-win', 'fa-trophy', '🎉 恭喜你猜对了！就是 ' + targetNumber + ' ！你用了 ' + attempts + ' 次，耗时 ' + timerSeconds + ' 秒。');
+            } else if (guess > targetNumber) {
+                addHistory(guess, 'high');
+                setHint('hint-high', 'fa-arrow-down', '猜大了！再试一个更小的数字 ~');
+            } else {
+                addHistory(guess, 'low');
+                setHint('hint-low', 'fa-arrow-up', '猜小了！再试一个更大的数字 ~');
+            }
+    
+            guessInput.value = '';
+            guessInput.focus();
+        }
+    
+        // ---- Event Listeners ----
+        guessBtn.addEventListener('click', handleGuess);
+        guessInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') handleGuess();
+        });
+        restartBtn.addEventListener('click', resetGame);
+    });
+    </script>
+</body>
+</html>

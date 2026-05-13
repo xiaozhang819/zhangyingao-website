@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 600" width="1920" height="600">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0e27"/>
+      <stop offset="50%" style="stop-color:#1a1040"/>
+      <stop offset="100%" style="stop-color:#0a0e27"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#7b2ff7"/>
+      <stop offset="100%" style="stop-color:#ff6b6b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="600" fill="url(#bg2)"/>
+  <!-- 装饰圈 -->
+  <circle cx="200" cy="150" r="280" fill="#7b2ff7" opacity="0.05"/>
+  <circle cx="1700" cy="450" r="220" fill="#ff6b6b" opacity="0.05"/>
+  <!-- 网格 -->
+  <g stroke="rgba(255,255,255,0.03)" stroke-width="1">
+    <line x1="0" y1="200" x2="1920" y2="200"/><line x1="0" y1="400" x2="1920" y2="400"/>
+    <line x1="640" y1="0" x2="640" y2="600"/><line x1="1280" y1="0" x2="1280" y2="600"/>
+  </g>
+  <!-- 抽象圆形图案 -->
+  <g opacity="0.06">
+    <circle cx="1400" cy="300" r="180" fill="none" stroke="#7b2ff7" stroke-width="2"/>
+    <circle cx="1400" cy="300" r="130" fill="none" stroke="#ff6b6b" stroke-width="2"/>
+    <circle cx="1400" cy="300" r="80" fill="none" stroke="#7b2ff7" stroke-width="2"/>
+  </g>
+  <!-- 代码装饰 -->
+  <text x="1200" y="240" font-family="'Courier New',monospace" font-size="14" fill="#00d4ff" opacity="0.15">&lt;html&gt;</text>
+  <text x="1200" y="265" font-family="'Courier New',monospace" font-size="14" fill="#00d4ff" opacity="0.12">&nbsp;&nbsp;&lt;head&gt;</text>
+  <text x="1200" y="290" font-family="'Courier New',monospace" font-size="14" fill="#00d4ff" opacity="0.10">&nbsp;&nbsp;&lt;/head&gt;</text>
+  <text x="1200" y="315" font-family="'Courier New',monospace" font-size="14" fill="#00d4ff" opacity="0.12">&nbsp;&nbsp;&lt;body&gt;</text>
+  <text x="1200" y="340" font-family="'Courier New',monospace" font-size="14" fill="#00d4ff" opacity="0.08">&lt;/html&gt;</text>
+  <!-- 文字 -->
+  <text x="200" y="240" font-family="'Microsoft YaHei',sans-serif" font-size="60" font-weight="bold" fill="#fff">技术与艺术融合</text>
+  <text x="200" y="310" font-family="'Microsoft YaHei',sans-serif" font-size="22" fill="#b0b8d1">打造极致用户体验，让每一行代码都有温度</text>
+  <rect x="200" y="350" width="160" height="48" rx="24" fill="url(#g2)" opacity="0.9"/>
+  <text x="280" y="380" font-family="'Microsoft YaHei',sans-serif" font-size="16" fill="#fff" text-anchor="middle" font-weight="bold">了解更多 →</text>
+  <!-- 浮动方块 -->
+  <g fill="#7b2ff7" opacity="0.08">
+    <rect x="1550" y="120" width="40" height="40" rx="8" transform="rotate(45,1570,140)"/>
+    <rect x="1650" y="380" width="30" height="30" rx="6" transform="rotate(30,1665,395)"/>
+    <rect x="1480" y="420" width="25" height="25" rx="5" transform="rotate(60,1492,432)"/>
+  </g>
+</svg>

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="张迎奥同学个人成长展示与技术实践分享 - 黄河交通学院人工智能学院">
+    <meta name="keywords" content="张迎奥, 个人成长, 成果展示, 技术实践, 黄河交通学院">
+    <title>张迎奥同学个人成长展示与技术实践分享</title>
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ==================== 加载屏幕 ==================== -->
+    <div class="loader" id="loader">
+        <div class="loader-spinner"></div>
+        <div class="loader-text">加载中...</div>
+        <div class="loader-progress">
+            <div class="loader-progress-bar"></div>
+        </div>
+    </div>
+    
+    <!-- ==================== 粒子背景 ==================== -->
+    <canvas id="particles-canvas"></canvas>
+    
+    <!-- ==================== 浮动装饰形状 ==================== -->
+    <div class="floating-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    
+    <!-- ==================== 导航栏 ==================== -->
+    <nav class="navbar" id="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logo.svg" alt="个人成长之路 logo">
+            </a>
+            <span class="logo-text">成长之路</span>
+        </div>
+    
+        <ul class="nav-menu">
+            <li><a href="index.html" class="active"><i class="fas fa-home"></i> 主页</a></li>
+            <li><a href="courses.html"><i class="fas fa-trophy"></i> 成果展示</a></li>
+            <li><a href="gallery.html"><i class="fas fa-code"></i> 技术实践</a></li>
+            <li><a href="game.html"><i class="fas fa-gamepad"></i> 猜数字</a></li>
+            <li><a href="about.html"><i class="fas fa-user"></i> 关于我</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> 联系我</a></li>
+            <li><span class="header-time" id="headerTime"></span></li>
+        </ul>
+    
+        <div class="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    
+    <!-- ==================== 英雄区域 (Hero) ==================== -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <div class="orb"></div>
+            <div class="orb"></div>
+            <div class="orb"></div>
+        </div>
+    
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-sparkles"></i> 小张nice欢迎您
+            </div>
+            <h1>
+                <span class="gradient-text">探索未知</span><br>
+                <span class="gradient-text-2">成就梦想</span>
+            </h1>
+            <div class="typewriter-container">
+                <span class="typewriter-text"></span>
+                <span class="typewriter-cursor"></span>
+            </div>
+            <div class="hero-actions">
+                <a href="about.html" class="btn btn-primary">
+                    <i class="fas fa-user"></i> 了解我
+                </a>
+                <a href="courses.html" class="btn btn-secondary">
+                    <i class="fas fa-trophy"></i> 成果展示
+                </a>
+                <a href="gallery.html" class="btn btn-glow">
+                    <i class="fas fa-code"></i> 技术实践
+                </a>
+            </div>
+        </div>
+    
+        <div class="hero-scroll-indicator">
+            <span>向下滚动</span>
+            <div class="scroll-mouse"></div>
+        </div>
+    </section>
+    
+    <!-- ==================== 轮播图 (Carousel) - 完善版 ==================== -->
+    <section class="carousel-section" id="carousel">
+        <div class="carousel-container">
+            <div class="carousel-slides-wrapper">
+                <div class="carousel-track" id="carouselTrack">
+                    <!-- 第一张幻灯片 - 跳转到 about.html -->
+                    <div class="carousel-slide" data-url="about.html">
+                        <img src="images/banner1.svg" alt="探索未知，成就梦想">
+                        <div class="slide-overlay"></div>
+                        <div class="slide-content">
+                            <span class="slide-tag tag-1"><i class="fas fa-rocket"></i> 探索</span>
+                            <h2>探索未知，成就梦想</h2>
+                            <p>以党员标准严格要求自己，以科技创新服务社会发展。每一步成长都是对梦想的坚守。</p>
+                            <a href="about.html" class="btn btn-sm btn-primary"><i class="fas fa-arrow-right"></i> 关于我</a>
+                        </div>
+                    </div>
+                    <!-- 第二张幻灯片 - 跳转到 courses.html -->
+                    <div class="carousel-slide" data-url="courses.html">
+                        <img src="images/banner2.svg" alt="技术与艺术融合">
+                        <div class="slide-overlay"></div>
+                        <div class="slide-content">
+                            <span class="slide-tag tag-2"><i class="fas fa-palette"></i> 成果</span>
+                            <h2>荣誉成果，见证成长</h2>
+                            <p>共计44项荣誉证书，涵盖国家级、省级、院校级奖项及各类资格证书。</p>
+                            <a href="courses.html" class="btn btn-sm btn-primary"><i class="fas fa-arrow-right"></i> 成果展示</a>
+                        </div>
+                    </div>
+                    <!-- 第三张幻灯片 - 跳转到 gallery.html -->
+                    <div class="carousel-slide" data-url="gallery.html">
+                        <img src="images/banner3.svg" alt="终身学习，持续进步">
+                        <div class="slide-overlay"></div>
+                        <div class="slide-content">
+                            <span class="slide-tag tag-3"><i class="fas fa-graduation-cap"></i> 实践</span>
+                            <h2>技术实践，锤炼技能</h2>
+                            <p>专注于科技创新领域，勇于挑战自我，在技术实践中不断提升专业能力。</p>
+                            <a href="gallery.html" class="btn btn-sm btn-primary"><i class="fas fa-arrow-right"></i> 技术实践</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- 指示器 -->
+            <div class="carousel-indicators" id="carouselIndicators">
+                <span class="active" data-index="0"></span>
+                <span data-index="1"></span>
+                <span data-index="2"></span>
+            </div>
+    
+            <!-- 控制按钮 -->
+            <div class="carousel-controls">
+                <button class="carousel-btn prev" id="prevBtn" aria-label="上一张"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-btn next" id="nextBtn" aria-label="下一张"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+
+​    
+    <!-- ==================== 特性/服务卡片 ==================== -->
+    <section class="section" id="features">
+        <div class="section-header reveal">
+            <span class="subtitle"><i class="fas fa-star"></i> 综合能力</span>
+            <h2>我的 <span class="highlight">成长维度</span></h2>
+            <p>思想引领、学习进取、科研创新、实践服务全面发展</p>
+            <div class="section-divider"></div>
+        </div>
+    
+        <div class="features-grid">
+            <div class="feature-card reveal">
+                <div class="card-number">01</div>
+                <div class="icon-wrap icon-3"><i class="fas fa-trophy"></i></div>
+                <h3>竞赛成果</h3>
+                <p>专注于科技创新领域，斩获国家级荣誉5项、省级荣誉7项、院校级荣誉15项。包括商业精英挑战赛国家一等奖、大创省金奖等。</p>
+            </div>
+            <div class="feature-card reveal" style="transition-delay:0.1s">
+                <div class="card-number">02</div>
+                <div class="icon-wrap icon-1"><i class="fas fa-flask"></i></div>
+                <h3>科研能力</h3>
+                <p>第三作者参与焦作市社科联项目结项，主持完成校园科研训练项目，具备扎实的科研素养与学术协作能力。</p>
+            </div>
+            <div class="feature-card reveal" style="transition-delay:0.2s">
+                <div class="card-number">03</div>
+                <div class="icon-wrap icon-5"><i class="fas fa-users"></i></div>
+                <h3>团体实践</h3>
+                <p>担任班长及课代表，沈丘县兼职团委副书记，"体育新生"公众号发表推文4篇，获社会实践先进个人称号。</p>
+            </div>
+            <div class="feature-card reveal" style="transition-delay:0.3s">
+                <div class="card-number">04</div>
+                <div class="icon-wrap icon-2"><i class="fas fa-brain"></i></div>
+                <h3>思想建设</h3>
+                <p>预备党员，坚定拥护党的领导，以党员标准严格要求自己，遵纪守法、严于律己，发挥先锋模范作用。</p>
+            </div>
+            <div class="feature-card reveal" style="transition-delay:0.4s">
+                <div class="card-number">05</div>
+                <div class="icon-wrap icon-6"><i class="fas fa-graduation-cap"></i></div>
+                <h3>学业成就</h3>
+                <p>成绩稳居班级第一、专业第五。荣获2024、2025年度国家励志奖学金，考取大数据分析师（中级）资格证书。</p>
+            </div>
+            <div class="feature-card reveal" style="transition-delay:0.5s">
+                <div class="card-number">06</div>
+                <div class="icon-wrap icon-4"><i class="fas fa-star"></i></div>
+                <h3>荣誉称号</h3>
+                <p>2025年度黄河交通学院大学生年度人物、科技之星、三好学生、社团优秀负责人等多项荣誉称号。</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ==================== 计数器部分 ==================== -->
+    <section class="section counter-section">
+        <div class="section-header">
+            <span class="subtitle"><i class="fas fa-chart-line"></i> 数据统计</span>
+            <h2>我的 <span class="highlight">荣誉足迹</span></h2>
+            <div class="section-divider"></div>
+        </div>
+    
+        <div class="counters-grid">
+            <div class="counter-item reveal">
+                <div class="counter-icon"><i class="fas fa-trophy"></i></div>
+                <div class="counter-number" data-target="5" data-suffix="">0</div>
+                <div class="counter-label">国家级荣誉</div>
+            </div>
+            <div class="counter-item reveal" style="transition-delay:0.1s">
+                <div class="counter-icon"><i class="fas fa-medal"></i></div>
+                <div class="counter-number" data-target="7" data-suffix="">0</div>
+                <div class="counter-label">省级荣誉</div>
+            </div>
+            <div class="counter-item reveal" style="transition-delay:0.2s">
+                <div class="counter-icon"><i class="fas fa-award"></i></div>
+                <div class="counter-number" data-target="15" data-suffix="">0</div>
+                <div class="counter-label">院校级荣誉</div>
+            </div>
+            <div class="counter-item reveal" style="transition-delay:0.3s">
+                <div class="counter-icon"><i class="fas fa-certificate"></i></div>
+                <div class="counter-number" data-target="44" data-suffix="">0</div>
+                <div class="counter-label">证书总数</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ==================== 图片墙 ==================== -->
+    <section class="section" id="gallery-wall">
+        <div class="section-header reveal">
+            <span class="subtitle"><i class="fas fa-images"></i> 成果概览</span>
+            <h2>我的 <span class="highlight">荣誉展示</span></h2>
+            <p>每一份荣誉都是成长的见证，点击查看更多</p>
+            <div class="section-divider"></div>
+        </div>
+    
+        <div class="image-wall">
+            <div class="wall-item reveal">
+                <img src="images/gallery1.svg" alt="竞赛获奖">
+                <div class="wall-icon"><i class="fas fa-search-plus"></i></div>
+                <div class="wall-overlay">
+                    <h3>竞赛获奖</h3>
+                    <p>国家级5项、省级7项、院校级15项荣誉</p>
+                </div>
+                <div class="wall-accent accent-1"></div>
+            </div>
+            <div class="wall-item reveal" style="transition-delay:0.1s">
+                <img src="images/gallery2.svg" alt="科研项目">
+                <div class="wall-icon"><i class="fas fa-search-plus"></i></div>
+                <div class="wall-overlay">
+                    <h3>科研项目</h3>
+                    <p>社科联项目结项，校园科研训练项目主持</p>
+                </div>
+                <div class="wall-accent accent-2"></div>
+            </div>
+            <div class="wall-item reveal" style="transition-delay:0.2s">
+                <img src="images/gallery3.svg" alt="专业证书">
+                <div class="wall-icon"><i class="fas fa-search-plus"></i></div>
+                <div class="wall-overlay">
+                    <h3>专业证书</h3>
+                    <p>大数据分析师（中级）等资格证书</p>
+                </div>
+                <div class="wall-accent accent-3"></div>
+            </div>
+            <div class="wall-item reveal" style="transition-delay:0.3s">
+                <img src="images/gallery4.svg" alt="社会实践">
+                <div class="wall-icon"><i class="fas fa-search-plus"></i></div>
+                <div class="wall-overlay">
+                    <h3>社会实践</h3>
+                    <p>兼职团委副书记，服务家乡发展</p>
+                </div>
+                <div class="wall-accent accent-4"></div>
+            </div>
+            <div class="wall-item reveal" style="transition-delay:0.4s">
+                <img src="images/gallery5.svg" alt="荣誉表彰">
+                <div class="wall-icon"><i class="fas fa-search-plus"></i></div>
+                <div class="wall-overlay">
+                    <h3>荣誉表彰</h3>
+                    <p>大学生年度人物、科技之星等荣誉称号</p>
+                </div>
+                <div class="wall-accent accent-5"></div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ==================== 关于预览 ==================== -->
+    <section class="section" id="about-preview">
+        <div class="section-header reveal">
+            <span class="subtitle"><i class="fas fa-user"></i> 关于我</span>
+            <h2>了解 <span class="highlight">我的故事</span></h2>
+            <div class="section-divider"></div>
+        </div>
+    
+        <div class="about-grid">
+            <div class="about-image reveal-left">
+                <div class="img-frame">
+                    <img src="images/about.svg" alt="关于我">
+                </div>
+                <div class="experience-badge" style="width:100px;height:100px">
+                    <span style="font-size:1.4rem">预备党员</span>
+                
+                </div>
+            </div>
+            <div class="about-text reveal-right">
+                <h3>张迎奥 <span class="highlight">同学</span></h3>
+                <p>黄河交通学院人工智能学院学生，预备党员，班级班长。思想上坚定拥护党的领导，以党员标准严格要求自己；学习上刻苦钻研，成绩稳居班级第一、专业第五，荣获国家励志奖学金。</p>
+                <p>在科技创新领域勇于挑战，斩获国家级荣誉5项、省级荣誉7项、院校级荣誉15项。包括商业精英挑战赛国家一等奖、中国国际大学生创新大赛省金奖、计算机设计大赛全国三等奖等。</p>
+                <p>担任班长及多门专业课课代表，并在家乡沈丘县担任兼职团委副书记，积极参与社会实践，荣获大学生年度人物、社会实践先进个人、科技之星等荣誉称号。</p>
+                <div class="about-tags">
+                    <span><i class="fas fa-trophy"></i> 国奖5项</span>
+                    <span><i class="fas fa-medal"></i> 省奖7项</span>
+                    <span><i class="fas fa-award"></i> 校奖15项</span>
+                    <span><i class="fas fa-graduation-cap"></i> 励志奖学金</span>
+                    <span><i class="fas fa-database"></i> 大数据分析师</span>
+                    <span><i class="fas fa-users"></i> 团委副书记</span>
+                    <span><i class="fas fa-star"></i> 年度人物</span>
+                    <span><i class="fas fa-microchip"></i> 科技之星</span>
+                </div>
+                <div style="margin-top:25px">
+                    <a href="about.html" class="btn btn-primary"><i class="fas fa-arrow-right"></i> 了解更多</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ==================== 引用块 ==================== -->
+    <section class="section">
+        <div class="quote-block reveal">
+            <i class="fas fa-quote-right"></i>
+            <blockquote>
+                以党员标准严格要求自己，以科技创新服务社会发展。每一步成长都是对梦想的坚守，每一份荣誉都是对努力的肯定。
+            </blockquote>
+            <div class="quote-author">—— 张迎奥</div>
+        </div>
+    </section>
+    
+    <!-- ==================== 页脚 ==================== -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="images/logo.svg" alt="成长之路">
+                    <span>成长之路</span>
+                </div>
+                <p>张迎奥同学的个人网站，记录成长历程、分享技术实践、展示荣誉成果。每一步成长都是对梦想的坚守。</p>
+                <div class="footer-social">
+                    <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" title="CSDN"><i class="fab fa-css3-alt"></i></a>
+                    <a href="#" title="邮箱"><i class="fas fa-envelope"></i></a>
+                    <a href="#" title="微信"><i class="fab fa-weixin"></i></a>
+                    <a href="https://www.zjtu.edu.cn" target="_blank" title="学校官网"><i class="fas fa-school"></i></a>
+                </div>
+            </div>
+    
+            <div class="footer-links">
+                <h4>快速导航</h4>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> 主页</a></li>
+                    <li><a href="courses.html"><i class="fas fa-chevron-right"></i> 成果展示</a></li>
+                    <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> 技术实践</a></li>
+                    <li><a href="game.html"><i class="fas fa-chevron-right"></i> 猜数字</a></li>
+                    <li><a href="about.html"><i class="fas fa-chevron-right"></i> 关于我</a></li>
+                    <li><a href="contact.html"><i class="fas fa-chevron-right"></i> 联系我</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-links">
+                <h4>友情链接</h4>
+                <ul>
+                    <li><a href="https://www.zjtu.edu.cn" target="_blank"><i class="fas fa-external-link-alt"></i> 黄河交通学院</a></li>
+                    <li><a href="https://www.runoob.com" target="_blank"><i class="fas fa-external-link-alt"></i> 菜鸟教程</a></li>
+                    <li><a href="https://github.com" target="_blank"><i class="fas fa-external-link-alt"></i> GitHub</a></li>
+                    <li><a href="https://developer.mozilla.org" target="_blank"><i class="fas fa-external-link-alt"></i> MDN 文档</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-contact">
+                <h4>联系方式</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> <span>河南省焦作市<br>黄河交通学院 人工智能学院</span></li>
+                    <li><i class="fas fa-envelope"></i> <span>z896230@outlook.com</span></li>
+                    <li><i class="fas fa-phone"></i> <span>+86 18439196508</span></li>
+                    <li><i class="fas fa-clock"></i> <span class="header-time"></span></li>
+                </ul>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>&copy; 2024-2026 张迎奥同学个人成长展示与技术实践分享. All Rights Reserved. | 黄河交通学院 人工智能学院</p>
+            <div class="footer-bottom-links">
+                <a href="index.html">主页</a>
+                <a href="about.html">关于</a>
+                <a href="contact.html">联系</a>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- ==================== 返回顶部 ==================== -->
+    <button class="back-to-top" aria-label="返回顶部">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <!-- ==================== 脚本 ==================== -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="js/main.js"></script
+</body>
+</html>
